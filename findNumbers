@@ -1,6 +1,6 @@
 class Solution {
     public int findNumbers(int[] nums) {
-        int even = 0;
+        int even = 0;  // total number of integers with even number digits
 
         for (int i = 0; i < nums.length; i++) {
             int count = 0;
