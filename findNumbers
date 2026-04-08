@@ -1,0 +1,21 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int even = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            int count = 0;
+            int num = nums[i];  // use a copy so we don’t destroy original
+
+            while (num != 0) {
+                num = num / 10;  // remove last digit
+                count++;
+            }
+
+            if (count % 2 == 0) {
+                even++;
+            }
+        }
+
+        return even;
+    }
+}
