@@ -1,21 +1,28 @@
 class Solution {
     public int[] sortedSquares(int[] nums) {
-        // sqaure all elements
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = nums[i] * nums[i];
-        }
+        // Two Pointers (optimal solution)
+        //  O(n) Time Complexity
+        int n = nums.length;
+        int[] result = new int[n];
         
-        // sort the array (bubble sort)
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums.length - i - 1; j++) {  // everything at an index greater than length-i-1 is already sorted
-                if (nums[j] > nums[j + 1]) {
-                    int temp = nums[j];
-                    nums[j] = nums[j + 1];
-                    nums[j + 1] = temp;
-                }
+        int left = 0;  
+        int right = n - 1;
+        int pos = n - 1;
+        
+        while (left <= right) {
+            int leftSq = nums[left] * nums[left];  // sqaure current left pointer element
+            int rightSq = nums[right] * nums[right];  // square current right pointer element
+            
+            // compare sqaures and fill result from the end 
+            if (leftSq > rightSq) {
+                result[pos] = leftSq;
+                left++;
+            } else {
+                result[pos] = rightSq;
+                right--;
             }
+            pos--;
         }
-        
-        return nums;
+        return result;
     }
 }
