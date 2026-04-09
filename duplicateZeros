@@ -18,7 +18,7 @@ class Solution {
                 arr[j] = arr[i];
             }
 
-            // Handle duplicate write if zero
+            // Handle duplicate zero write
             if (arr[i] == 0) {
                 j--;
                 if (j < n) {
