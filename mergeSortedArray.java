@@ -1,6 +1,6 @@
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        // 3 Pointers (Optimal Solution)
+        // 3 Pointers (optimal solution)
         // O(m + n) Time Complexity
         int i = m - 1;      // nums1 pointer
         int j = n - 1;      // nums2 pointer
