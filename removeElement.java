@@ -1,17 +1,16 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-        // Two pointers, swap with end
-        int i = 0;
-        int n = nums.length;
+        // Overwrite with wanted elements (optimal solution)
+        int k = 0;
         
-        while (i < n) {
-            if (nums[i] == val) {
-                nums[i] = nums[n - 1];  // move the element to be removed to the end of the array
-                n--;
-            } else {
-                i++;
+        // Consider elements to be removed as non-existent
+        // In a single pass copy the visible elements in-place
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[k] = nums[i];
+                k++;
             }
         }
-        return n;   // size of the valid portion of the array 
+        return k;
     }
 }
