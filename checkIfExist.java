@@ -12,7 +12,7 @@ class Solution {
             }
             
             // check if half exists (only if even)
-            if (num % 2 == 0&& seen.contains(num / 2)) {
+            if (num % 2 == 0 && seen.contains(num / 2)) {
                 return true;
             }
             
