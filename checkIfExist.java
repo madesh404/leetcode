@@ -8,7 +8,7 @@ class Solution {
                 } 
             }
         }
-        return false;   // after checking all paris 
+        return false;   // return false after checking every pair
         
     }
 }
