@@ -1,14 +1,24 @@
+import java.util.HashSet;
+
 class Solution {
     public boolean checkIfExist(int[] arr) {
-        // Brute Force Approach
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (i != j && arr[i] == 2*arr[j]) {
-                    return true;
-                } 
-            }
-        }
-        return false;   // return false after checking every pair
+        // hashTable Approach (optimal solution)
+        HashSet<Integer> seen = new HashSet<>();
         
+        for (int num : arr) {
+            // check if double exists
+            if (seen.contains(2 * num)) {
+                return true;
+            }
+            
+            // check if half exists (only if even)
+            if (num % 2 == 0&& seen.contains(num / 2)) {
+                return true;
+            }
+            
+            seen.add(num);
+        }
+        
+        return false;        
     }
 }
