@@ -1,6 +1,8 @@
 class Solution {
     public boolean validMountainArray(int[] arr) {
-        
+        // 2 Pointers (optimal solution)
+        // O(n) Time Complexity: worst case inspect the entire array once
+        // O(1) Space Complexity: only 2 variables created, extra memory stays the same regardless of input size
         int n = arr.length;
         
         if (n < 3) {
