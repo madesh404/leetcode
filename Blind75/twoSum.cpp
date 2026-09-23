@@ -1,5 +1,7 @@
 // Brute Force Approach
-// For each element in nums (x), loop through nums and find if there is another element = target - x
+// For each element in nums (i), loop through rest of array and find if there is another element (j) = target - i
+// Time Complexity = O(n^2), nested for loop
+// Space Complexity = O(1), space required does not depend on size of input array
 class Solution {
 public:
     vector<int> twoSum(vector<int> &nums, int target) {
